@@ -43,6 +43,7 @@ untuk menampilkan pesan interaktif yang muncul sementara di bagian bawah layar, 
 - tulis flutter run -d chrome di terminal
 - buat file menu dart dan import import 'package:flutter/material.dart';
 - perbaiki struktur code di main.dart seperti ini
+```
 import 'package:flutter/material.dart';
 import 'package:stock_mates/menu.dart';
 
@@ -66,8 +67,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+```
 - perbaiki struktur code di menu.dart seperti ini (notes : saya menambah cardColor untuk bonus )
+```
 import 'package:flutter/material.dart';
 
 class ShopItem {
@@ -144,6 +146,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+```
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
