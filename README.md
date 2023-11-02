@@ -146,7 +146,6 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-```
 
 class ShopCard extends StatelessWidget {
   final ShopItem item;
@@ -193,6 +192,7 @@ class ShopCard extends StatelessWidget {
     );
   }
 }
+```
 
 - tugas selesai dan lakukan git add . , git commit -m "selesai" , git push origin master
 # sudah mengerjakan bonus dengan pemberian warna yg berbeda
