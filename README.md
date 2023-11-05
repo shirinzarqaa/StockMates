@@ -3,12 +3,12 @@
 
 # Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
 
-**statelessWidget** 
+- **statelessWidget** 
 Widget tanpa keadaan (stateless) tidak memiliki keadaan internal yang dapat berubah selama masa hidupnya.
 Mereka hanya memiliki properti yang ditentukan selama konstruksi dan tidak bisa diubah setelahnya.
 Stateless widget cocok digunakan untuk tampilan yang tidak berubah atau bergantung pada properti yang diberikan pada saat pembuatan widget. Contohnya adalah teks statis, ikon, atau widget yang tidak memerlukan interaksi pengguna.
 Stateful Widget:
-**statefullWidget** 
+- **statefullWidget** 
 Widget dengan keadaan (stateful) memiliki keadaan internal yang dapat berubah selama masa hidupnya.
 Keadaan internal dapat diubah berdasarkan peristiwa atau interaksi pengguna, dan widget ini dapat diperbarui untuk mencerminkan perubahan tersebut.
 Stateful widget cocok digunakan untuk tampilan yang perlu berubah atau menanggapi perubahan, seperti daftar item dinamis, formulir, atau widget yang berinteraksi dengan data eksternal.
