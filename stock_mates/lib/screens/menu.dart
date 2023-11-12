@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:stock_mates/widgets/shop_card.dart';
+import 'package:stock_mates/widgets/left_drawer.dart';
 
-class ShopItem {
-  final String name;
-  final IconData icon;
-  final Color cardColor;
-
-  ShopItem(this.name, this.icon, this.cardColor);
-}
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final List<ShopItem> items = [
-    ShopItem("Lihat Item", Icons.checklist, Colors.indigo), // Warna sesuai dengan preferensi Anda
+    ShopItem("Lihat Item", Icons.checklist,Colors.indigo), // Warna sesuai dengan preferensi Anda
     ShopItem("Tambah Item", Icons.add_shopping_cart, Colors.green), // Warna sesuai dengan preferensi Anda
     ShopItem("Logout", Icons.logout, Colors.red), // Warna sesuai dengan preferensi Anda
   ];
@@ -29,11 +24,15 @@ class MyHomePage extends StatelessWidget {
   @override
     Widget build(BuildContext context) {
         return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Stock mates',
+        appBar: AppBar(
+          title: const Text(
+            'stock mates',
+          ),
+          backgroundColor: Colors.indigo,
+          foregroundColor: Colors.white,
         ),
-      ),
+        // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
+        drawer: const LeftDrawer(),
       body: SingleChildScrollView(
         // Widget wrapper yang dapat discroll
         child: Padding(
@@ -64,56 +63,10 @@ class MyHomePage extends StatelessWidget {
                 shrinkWrap: true,
                 children: items.map((ShopItem item) {
                   // Iterasi untuk setiap item
-                  return ShopCard(item, item.cardColor);
+                  return ShopCard(item);
                 }).toList(),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ShopCard extends StatelessWidget {
-  final ShopItem item;
-  final Color cardColor;
-
-  const ShopCard(this.item, this.cardColor, {super.key}); // Constructor
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: cardColor,
-      child: InkWell(
-        // Area responsive terhadap sentuhan
-        onTap: () {
-          // Memunculkan SnackBar ketika diklik
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}")));
-        },
-        child: Container(
-          // Container untuk menyimpan Icon dan Text
-          padding: const EdgeInsets.all(8),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  item.icon,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
-                const Padding(padding: EdgeInsets.all(3)),
-                Text(
-                  item.name,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
           ),
         ),
       ),
