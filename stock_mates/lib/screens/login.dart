@@ -2,6 +2,7 @@ import 'package:stock_mates/screens/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:stock_mates/screens/register.dart';
 
 void main() {
     runApp(const LoginApp());
@@ -105,6 +106,17 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             child: const Text('Login'),
                         ),
+                        const SizedBox(height: 12.0),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigate to Register Page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const RegisterPage()),
+                            );
+                          },
+                          child: const Text('Register'),
+                        )
                     ],
                 ),
             ),
