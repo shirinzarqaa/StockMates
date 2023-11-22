@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_mates/screens/list_product.dart';
 import 'package:stock_mates/screens/menu.dart';
 import 'package:stock_mates/screens/stockmates_form.dart';
 
@@ -64,6 +65,20 @@ class LeftDrawer extends StatelessWidget {
               );
             },
           ),
+          // Kode ListTile Menu
+
+          ListTile(
+              leading: const Icon(Icons.shopping_basket),
+              title: const Text('Daftar Produk'),
+              onTap: () {
+                  // Route menu ke halaman produk
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProductPage()),
+                  );
+              },
+          ),
+
 
         ],
       ),
